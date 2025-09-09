@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "httpd-deployment"
+spec:
+  selector:
+    matchLabels:
+      app: "httpd-backend"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: "httpd-backend"
+    spec:
+      containers:
+      - name: custom-container
+        image: 381492032847.dkr.ecr.us-east-1.amazonaws.com/my-kubernetes-demo-repo-20-aug-25:latest
+        ports:
+        - containerPort: 80
