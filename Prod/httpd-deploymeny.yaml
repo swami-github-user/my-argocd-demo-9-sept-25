@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: "httpd-backend"
-  replicas: 3
+  replicas: 6
   template:
     metadata:
       labels:
